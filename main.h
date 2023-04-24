@@ -20,11 +20,11 @@ void print_integer(va_list args);
   *Description: FormatSpecifier structure
   */
 
-typedef struct FormatSpecifier
+typedef struct
 {
 	char specifier;
 	void (*print)(va_list);
-};
+}FormatSpecifier;
 
 FormatSpecifier *get_specifiers();
 
