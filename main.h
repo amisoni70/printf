@@ -24,7 +24,7 @@ typedef struct FormatSpecifier
 {
 	char specifier;
 	void (*print)(va_list);
-}
+};
 
 FormatSpecifier *get_specifiers();
 
