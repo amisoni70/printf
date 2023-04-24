@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+  *get_specifier - get specifier
+  *
+  *Return: specifier
+  */
 FormatSpecifier *get_specifiers()
 {
 	static FormatSpecifier specifiers[] = {
@@ -7,6 +12,6 @@ FormatSpecifier *get_specifiers()
 		{'s', print_string},
 		{'%', print_percent},
 		{'\0', NULL}
-        };
-        return specifiers;
+	};
+	return (specifiers);
 }
