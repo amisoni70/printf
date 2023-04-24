@@ -35,3 +35,26 @@ void print_percent(va_list args)
 
 	write(1, "%", 1);
 }
+
+
+/*
+int (*get_specifier(char *s))(const char *, ...)
+{
+	int l = 0;
+	FormatSpecifier specifiers[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'%', print_percent},
+		{'\0', NULL}
+	};
+
+	while(specifiers[l] != '\0')
+	{
+		if (*s == *(specifiers[l]) && s[1] == '\0')
+			return (specifiers[l].print);
+
+		l++;
+	}
+	return (1);
+}
+*/

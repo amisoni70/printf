@@ -12,6 +12,7 @@ void print_character(va_list args);
 void print_string(va_list args);
 void print_percent(va_list args);
 void print_integer(va_list args);
+
 /**
   *struct FormatSpecifier - structure name
   *@specifier: char member
@@ -19,12 +20,11 @@ void print_integer(va_list args);
   *
   *Description: FormatSpecifier structure
   */
-
 typedef struct
 {
 	char specifier;
 	void (*print)(va_list);
-}FormatSpecifier;
+} FormatSpecifier;
 
 FormatSpecifier *get_specifiers();
 
