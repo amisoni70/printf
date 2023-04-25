@@ -9,7 +9,7 @@ int print_character(va_list args)
 	char c;
 	/*int char_written;*/
 
-	if (!args)
+	if (args == NULL)
 		break;
 
 	c = va_arg(args, int);
@@ -31,7 +31,7 @@ int print_string(va_list args)
 	char *s;
 	int l = 0;
 
-	if (!args)
+	if (args == NULL)
 		break;
 
 	s = va_arg(args, char *);
