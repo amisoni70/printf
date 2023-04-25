@@ -11,8 +11,8 @@ FormatSpecifier *get_specifiers(void)
 		{'c', print_character},
 		{'s', print_string},
 		{'%', print_percent},
-		/*{'d', print_integer},*/
-		/*{'i', print_integer},*/
+		{'d', print_integer},
+		{'i', print_integer},
 		{'\0', NULL}
 	};
 
