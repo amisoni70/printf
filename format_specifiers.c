@@ -10,11 +10,10 @@ int print_character(va_list ap)
 {
 	char c = va_arg(ap, int);
 
-	if (c < 0 || c > 127)
+	if (!ap)
 		return (-1);
 
 	return (write(1, &c, 1));
-
 }
 
 /**
