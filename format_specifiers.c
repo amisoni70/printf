@@ -34,14 +34,15 @@ int print_percentage(__attribute__((unused))va_list ap)
 
 int print_string(va_list ap)
 {
-	int k;
+	int k = 0;
 	char *str;
 
 	str = va_arg(ap, char *);
 	if (str == NULL)
 		str = "(null)";
-	for (k = 0 ; str[k] != '\0' ; k++)
-	{}
+	/*for (k = 0 ; str[k] != '\0' ; k++)*/
+	/*{}*/
+	while (str[k] != '\0')
+		k++;
 	return (write(1, str, k));
-
 }
