@@ -15,7 +15,7 @@ int print_integer(va_list args)
 	int printed_chars = 0;
 
 	if (!n)
-		return (-1);
+		break;
 
 	if (n == 0)
 	{
