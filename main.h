@@ -1,6 +1,8 @@
 #ifndef MAIN_HEADER
 #define MAIN_HEADER
 
+#define BUFFER_SIZE 1024
+
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
@@ -13,6 +15,7 @@ int print_string(va_list args);
 int print_percent(va_list args);
 int print_integer(va_list args);
 int print_binary(va_list args);
+void write_with_buffer(int fd, const char *msg);
 /**
   *struct specifier - structure to handle specifier
   *@specifier: specifier
