@@ -44,6 +44,5 @@ int print_string(va_list ap)
 	/*{}*/
 	while (str[k] != '\0')
 		k++;
-	k++;
 	return (write(1, str, k));
 }
