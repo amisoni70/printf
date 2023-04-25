@@ -10,7 +10,7 @@ int print_character(va_list args)
 	/*int char_written;*/
 
 	if (!args)
-		return;
+		break;
 
 	c = va_arg(args, int);
 
@@ -32,7 +32,7 @@ int print_string(va_list args)
 	int l = 0;
 
 	if (!args)
-		return;
+		break;
 
 	s = va_arg(args, char *);
 	if (!s)
