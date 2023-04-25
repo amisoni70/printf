@@ -5,8 +5,6 @@
   *		in oder to call write as little as possible
   *@fd: file descriptor
   *@msg: message to be written
-  *
-  *Return: nothing
   */
 
 void write_with_buffer(int fd, const char *msg)
