@@ -10,8 +10,6 @@ int print_character(va_list ap)
 {
 	char c = va_arg(ap, int);
 
-	if (!ap)
-		return (-1);
 	return (write(1, &c, 1));
 }
 
@@ -40,9 +38,10 @@ int print_string(va_list ap)
 
 	if (!str)
 		str = "(null)";
-
-	while (str[k])
-		k++;
-
+	else
+	{
+		while (str[k])
+			k++;
+	}
 	return (write(1, str, k));
 }
