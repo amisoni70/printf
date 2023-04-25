@@ -35,6 +35,6 @@ int print_integer(va_list args)
 	while (--i >= 0)
 		printed_chars += write(1, &buffer[i], 1);
 
-	free(buffer);
+	/*free(buffer);*/
 	return (printed_chars);
 }
