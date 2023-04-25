@@ -6,6 +6,7 @@
   *@fd: file descriptor
   *@msg: message to be written
   *
+  *Return: exit status
   */
 
 int write_with_buffer(int fd, const char *msg)
@@ -14,7 +15,7 @@ int write_with_buffer(int fd, const char *msg)
 	int l = 0, n = 0, p = 0, c, bytes_written;
 
 	if (msg == NULL)
- 		   return (-1);
+		return (-1);
 
 	while (msg[l] != '\0')
 		l++;
