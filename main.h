@@ -7,23 +7,24 @@
 #include <string.h>
 #include <unistd.h>
 
+int _putchar(char c);
 int _printf(const char *format, ...);
-void print_character(va_list args);
-void print_string(va_list args);
-void print_percent(va_list args);
-void print_integer(va_list args);
+int print_character(va_list args);
+int print_string(va_list args);
+int print_percent(va_list args);
+int print_integer(va_list args);
 
 /**
-  *struct FormatSpecifier - structure name
-  *@specifier: char member
-  *@print: a function member
+  *struct specifier - structure to handle specifier
+  *@specifier: specifier
+  *@print: function to print specifier
   *
   *Description: FormatSpecifier structure
   */
-typedef struct
+typedef struct specifier
 {
 	char specifier;
-	void (*print)(va_list);
+	int (*print)(va_list);
 } FormatSpecifier;
 
 FormatSpecifier *get_specifiers();
