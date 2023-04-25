@@ -18,8 +18,8 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (-1);
 
-	va_start(args, format);
 	spec = get_specifiers();
+	va_start(args, format);
 
 	while (*format)
 	{
