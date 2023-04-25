@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...);
 int print_character(va_list ap);
-int print_percentage(__attribute__((unused))va_list ap);
+int print_percentage(va_list ap);
 int print_string(va_list ap);
 
 /**

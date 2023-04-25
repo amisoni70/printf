@@ -21,8 +21,9 @@ int print_character(va_list ap)
  * Return: 1 (will return the character %)
 **/
 
-int print_percentage(__attribute__((unused))va_list ap)
+int print_percentage(va_list ap)
 {
+	(void) ap;
 	return (write(1, "%", 1));
 }
 
