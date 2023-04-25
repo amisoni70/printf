@@ -20,8 +20,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 	spec = get_specifiers();
-	if (!spec)
-		return (-1);
+
 	while (*format)
 	{
 		if (*format == '%')
