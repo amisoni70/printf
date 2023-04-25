@@ -8,9 +8,11 @@
 
 int print_character(va_list ap)
 {
-	char c;
+	char c = va_arg(ap, int);
 
-	c = va_arg(ap, int);
+	if (c < 0 || c > 127)
+		return (-1);
+
 	return (write(1, &c, 1));
 
 }
@@ -36,14 +38,13 @@ int print_percentage(va_list ap)
 int print_string(va_list ap)
 {
 	int k = 0;
-	char *str;
+	char *str = va_arg(ap, char *);
 
-	str = va_arg(ap, char *);
-	if (str == NULL)
+	if (!str)
 		str = "(null)";
-	/*for (k = 0 ; str[k] != '\0' ; k++)*/
-	/*{}*/
-	while (str[k] != '\0')
+
+	while (str[k])
 		k++;
+
 	return (write(1, str, k));
 }
