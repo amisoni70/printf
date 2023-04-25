@@ -16,14 +16,5 @@ FormatSpecifier *get_specifiers(void)
 		{'\0', NULL}
 	};
 
-	static const int num_specifiers = sizeof(specifiers) / sizeof(specifiers[0]);
-	FormatSpecifier *copy = malloc(num_specifiers * sizeof(*copy));
-
-	if (copy)
-	{
-		memcpy(copy, specifiers, num_specifiers * sizeof(*copy));
-	}
-
-	return (copy);
-	/*return (specifiers);*/
+	return (specifiers);
 }
