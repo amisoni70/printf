@@ -12,7 +12,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int printed_chars = 0, resul = 0;
+	int printed_chars = 0, result = 0;
 	FormatSpecifier *spec;
 
 	if (!format)
