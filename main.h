@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef MAIN_HEADER
+#define MAIN_HEADER
 
 #define BUFFER_SIZE 1024
 
@@ -10,12 +10,12 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-int print_character(va_list ap);
-int print_percentage(va_list ap);
-int print_string(va_list ap);
+int print_character(va_list args);
+int print_string(va_list args);
+int print_percent(va_list args);
 int print_integer(va_list args);
 int print_binary(va_list args);
-void write_with_buffer(int fd, const char *msg);
+int write_with_buffer(int fd, const char *msg);
 /**
   *struct specifier - structure to handle specifier
   *@specifier: specifier

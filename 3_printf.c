@@ -8,10 +8,13 @@
   *
   */
 
-void write_with_buffer(int fd, const char *msg)
+int write_with_buffer(int fd, const char *msg)
 {
 	char buffer[BUFFER_SIZE];
 	int l = 0, n = 0, p = 0, c, bytes_written;
+
+	if (msg == NULL)
+ 		   return (-1);
 
 	while (msg[l] != '\0')
 		l++;
@@ -27,4 +30,5 @@ void write_with_buffer(int fd, const char *msg)
 			break;
 		p += bytes_written;
 	}
+	return (0);
 }
