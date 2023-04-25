@@ -6,13 +6,14 @@
   *@fd: file descriptor
   *@msg: message to be written
   *
-  *Return: exit status
+  *Return: nothing
   */
 
-int write_with_buffer(int fd, const char *msg)
+void write_with_buffer(int fd, const char *msg)
 {
 	char buffer[BUFFER_SIZE];
 	int l = 0, n = 0, p = 0, c, bytes_written;
+
 
 	while (msg[l] != '\0')
 		l++;
@@ -27,6 +28,5 @@ int write_with_buffer(int fd, const char *msg)
 		if (bytes_written == -1)
 			break;
 		p += bytes_written;
-	}
-	return (0);
+x	}
 }
