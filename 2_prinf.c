@@ -8,8 +8,8 @@
 int print_binary(va_list args)
 {
 	unsigned int n, temp;
-	int l, i = 0, s = 0, *binary, char_written = 0;
-	char c;
+	int l, i = 0, s = 0, char_written = 0;
+	char *binary;
 
 	n = va_arg(args, unsigned int);
 
@@ -26,20 +26,20 @@ int print_binary(va_list args)
 		s++;
 	}
 
-	binary = (int *)malloc(sizeof(int) * s);
+	binary = malloc(sizeof(char) * (s + 1));
 	if (!binary)
 		return (-1);
 
-	while (n > 0)
+	while (i < s)
 	{
-		binary[i++] = n % 2 + '0';
-		n = n / 2;
+		binary[i++] = (n & 1) + '0';
+		n >>= 1;
 	}
+	binary[s] = '\0';
 
 	for (l = s - 1; l >= 0; l--)
 	{
-		c = binary[l] + '0';
-		char_written += write(1, &c, 1);
+		char_written += write(1, &binary[l], 1);
 	}
 
 	free(binary);
