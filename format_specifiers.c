@@ -40,7 +40,7 @@ int print_string(va_list ap)
 	str = va_arg(ap, char *);
 	if (str == NULL)
 		str = "(nil)";
-	for(k = 0 ; str[k] != '\0' ; k++)
+	for (k = 0 ; str[k] != '\0' ; k++)
 	{}
 	return (write(1, str, k));
 
