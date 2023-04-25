@@ -28,5 +28,5 @@ void write_with_buffer(int fd, const char *msg)
 		if (bytes_written == -1)
 			break;
 		p += bytes_written;
-x	}
+	}
 }
