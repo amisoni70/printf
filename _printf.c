@@ -13,10 +13,9 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int printed_chars = 0;
-	int found_specifier = 0;
 	FormatSpecifier *spec;
 
-	if (!format || !*format)
+	if (!format)
 		return (-1);
 
 	spec = get_specifiers();
@@ -31,12 +30,11 @@ int _printf(const char *format, ...)
 				if (spec->specifier == *format)
 				{
 					printed_chars += spec->print(args);
-					found_specifier = 1;
 					break;
 				}
 				spec++;
 			}
-			if (!found_specifier)
+			if (!spec->specifier)
 			{
 				printed_chars += write(1, "%", 1);
 				if (*format)
