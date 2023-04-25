@@ -40,7 +40,6 @@ int print_integer(va_list args)
 	for (j = i - 1; j >= 0; j--)
 		printed_chars += write(1, &buffer[j], 1);
 
-	printed_chars = write(1, buffer, i);
 	free(buffer);
 	return (printed_chars);
 }
