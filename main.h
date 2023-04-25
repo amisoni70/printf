@@ -8,10 +8,17 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
+<<<<<<< HEAD
 int print_character(va_list ap);
 int print_percentage(va_list ap);
 int print_string(va_list ap);
 
+=======
+int print_character(va_list args);
+int print_string(va_list args);
+int print_percent(va_list args);
+int print_integer(va_list args);
+>>>>>>> sirln
 /**
   *struct specifier - structure to handle specifier
   *@specifier: specifier
