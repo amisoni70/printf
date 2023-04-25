@@ -23,8 +23,6 @@ int print_string(va_list args)
 	int l = 0;
 
 	s = va_arg(args, char *);
-	if (!s)
-		s = "";
 
 	while (s[l] != '\0')
 	{
