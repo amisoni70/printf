@@ -14,6 +14,9 @@ int print_integer(va_list args)
 	int i = 0, j;
 	int printed_chars = 0;
 
+	if (!n)
+		return (-1);
+
 	if (n == 0)
 	{
 		printed_chars += write(1, "0", 1);
