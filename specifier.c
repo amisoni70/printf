@@ -15,5 +15,6 @@ FormatSpecifier *get_specifiers(void)
 		/*{'i', print_integer},*/
 		{'\0', NULL}
 	};
+
 	return (specifiers);
 }
