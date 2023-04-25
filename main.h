@@ -1,5 +1,5 @@
-#ifndef MAIN_HEADER
-#define MAIN_HEADER
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdlib.h>
 #include <stdarg.h>
@@ -8,10 +8,9 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-int print_character(va_list args);
-int print_string(va_list args);
-int print_percent(va_list args);
-int print_integer(va_list args);
+int print_character(va_list ap);
+int print_percentage(va_list ap);
+int print_string(va_list ap);
 
 /**
   *struct specifier - structure to handle specifier

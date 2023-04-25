@@ -10,9 +10,7 @@ FormatSpecifier *get_specifiers(void)
 	static FormatSpecifier specifiers[] = {
 		{'c', print_character},
 		{'s', print_string},
-		{'%', print_percent},
-		/*{'d', print_integer},*/
-		/*{'i', print_integer},*/
+		{'%', print_percentage},
 		{'\0', NULL}
 	};
 
