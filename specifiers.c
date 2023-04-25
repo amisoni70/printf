@@ -13,6 +13,7 @@ FormatSpecifier *get_specifiers(void)
 		{'%', print_percentage},
 		{'d', print_integer},
 		{'i', print_integer},
+		{'b', print_binary},
 		{'\0', NULL}
 	};
 
