@@ -37,10 +37,10 @@ int _printf(const char *format, ...)
 			if (!spec->specifier)
 			{
 				printed_chars += write(1, "%", 1);
-				if (*format)
-				{
-					printed_chars += write(1, format, 1);
-				}
+				/*if (*format)*/
+				/*{*/
+				/*	printed_chars += write(1, format, 1);*/
+				/*}*/
 			}
 		}
 		else
