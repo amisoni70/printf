@@ -10,8 +10,8 @@ int print_integer(va_list args)
 {
 	int n = va_arg(args, int);
 	int sign = 1;
-	char *buffer;
-	int i = 0, j;
+	char *buffer, temp;
+	int i = 0, j = 0;
 	int printed_chars = 0;
 
 	if (n == 0)
@@ -31,7 +31,7 @@ int print_integer(va_list args)
 	if (!buffer)
 		return (-1);
 
-	while (n > 0 && i < 21)
+	while (n > 0 && i < 20)
 	{
 		buffer[i++] = n % 10 + '0';
 		n /= 10;
@@ -43,9 +43,15 @@ int print_integer(va_list args)
 	/*while (--i >= 0)*/
 		/*printed_chars += write(1, &buffer[i], 1);*/
 
-	for (j = i - 1; j >= 0; j--)
-		printed_chars += write(1, &buffer[j], 1);
-
+	/*for (j = i - 1; j >= 0; j--)*/
+		/*printed_chars += write(1, &buffer[j], 1);*/
+	for (; j < i / 2; j++)
+	{
+		temp = buffer[j];
+		buffer[j] = buffer[i - j - 1];
+		buffer[i - j - 1] = temp;
+	}
+	printed_chars = write(1, buffer, i);
 	free(buffer);
 	return (printed_chars);
 }
