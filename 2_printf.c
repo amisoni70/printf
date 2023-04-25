@@ -8,9 +8,9 @@
 
 int print_unsigned_integer(va_list args)
 {
-	unsigned *buffer, temp, int n = va_arg(args, unsigned int);
+	unsigned int temp, n = va_arg(args, unsigned int);
 	char c;
-	int l, i = 0, n = 0, printed_chars = 0;
+	int l, i = 0, s = 0, *buffer, printed_chars = 0;
 
 	if (n == 0)
 	{
@@ -21,7 +21,7 @@ int print_unsigned_integer(va_list args)
 	temp = n;
 	while (temp > 0)
 	{
-		temp = temp / 2
+		temp = temp / 2;
 		n++;
 	}
 
@@ -39,9 +39,11 @@ int print_unsigned_integer(va_list args)
 		n /= 2;
 	}
 
-	for (l = n - 1 ; l >= 0 ; l--)
+	for (l = s - 1 ; l >= 0 ; l--)
+	{
 		c = buffer[l] + '0';
-		printed_chars += write(1, &c], 1);
+		printed_chars += write(1, &c, 1);
+	}
 
 	free(buffer);
 	return (printed_chars);
