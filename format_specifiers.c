@@ -37,11 +37,12 @@ int print_string(va_list ap)
 	char *str = va_arg(ap, char *);
 
 	if (!str)
-		str = "(null)";
-	else
 	{
-		while (str[k])
-			k++;
+		str = "(null)";
+	}
+	while (str[k])
+	{
+		k++;
 	}
 	return (write(1, str, k));
 }
