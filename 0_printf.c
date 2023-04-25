@@ -7,18 +7,18 @@
 int print_character(va_list args)
 {
 	char c;
-	int char_written;
+	/*int char_written;*/
 
-	/*if (args == NULL)*/
-		/*return (-1);*/
+	if (!args)
+		return (-1);
 
 	c = va_arg(args, int);
 
-	char_written = write(1, &c, 1);
-	if (char_written < 0)
-		return (-1);
+	/*char_written = write(1, &c, 1);*/
+	/*if (char_written < 0)*/
+		/*return (-1);*/
 
-	return (char_written);
+	return (write(1, &c, 1));
 }
 
 /**
@@ -29,10 +29,10 @@ int print_character(va_list args)
 int print_string(va_list args)
 {
 	char *s;
-	int l = 0, char_written;
+	int l = 0;
 
-	/*if (!args)*/
-		/*return (-1);*/
+	if (!args)
+		return (-1);
 
 	s = va_arg(args, char *);
 	if (!s)
@@ -43,11 +43,11 @@ int print_string(va_list args)
 		l++;
 	}
 
-	char_written = write(1, s, l);
-	if (char_written < 0)
-		return (-1);
+	/*char_written = write(1, s, l);*/
+	/*if (char_written < 0)*/
+		/*return (-1);*/
 
-	return (char_written);
+	return (write(1, s, l));
 }
 
 /**
