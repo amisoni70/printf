@@ -20,7 +20,7 @@ int print_integer(va_list args)
 		n = -n;
 	}
 	/* Maximum size for a 64-bit integer is 20 */
-	buffer = malloc(sizeof(char) * 21);
+	buffer = malloc(sizeof(char) * 20);
 	if (!buffer)
 		return (-1);
 	while (n > 0)
