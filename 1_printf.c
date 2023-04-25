@@ -37,14 +37,9 @@ int print_integer(va_list args)
 	}
 	if (sign == -1)
 		buffer[i++] = '-';
-	/*for (j = i - 1; j >= 0; j--)*/
-		/*printed_chars += write(1, &buffer[j], 1);*/
-	for (; j < i / 2; j++)
-	{
-		temp = buffer[j];
-		buffer[j] = buffer[i - j - 1];
-		buffer[i - j - 1] = temp;
-	}
+	for (j = i - 1; j >= 0; j--)
+		printed_chars += write(1, &buffer[j], 1);
+
 	printed_chars = write(1, buffer, i);
 	free(buffer);
 	return (printed_chars);
