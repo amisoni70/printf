@@ -17,10 +17,10 @@ int _printf(const char *format, ...)
 
 	if (!format)
 		return (-1);
-
-	spec = get_specifiers();
 	va_start(args, format);
-
+	spec = get_specifiers();
+	if (!spec)
+		return (-1);
 	while (*format)
 	{
 		if (*format == '%')
@@ -39,9 +39,7 @@ int _printf(const char *format, ...)
 			{
 				printed_chars += write(1, "%", 1);
 				if (*format)
-				{
 					printed_chars += write(1, format, 1);
-				}
 			}
 		}
 		else

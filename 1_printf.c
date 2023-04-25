@@ -10,7 +10,7 @@ int print_integer(va_list args)
 {
 	int n = va_arg(args, int);
 	int sign = 1;
-	char *buffer, temp;
+	char *buffer;
 	int i = 0, j = 0;
 	int printed_chars = 0;
 
