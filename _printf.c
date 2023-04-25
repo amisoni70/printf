@@ -12,7 +12,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int printed_chars = 0, result = 0;
+	int printed_chars = 0;
 	FormatSpecifier *spec;
 
 	if (!format)
@@ -28,10 +28,7 @@ int _printf(const char *format, ...)
 			{
 				if (spec->specifier == *format)
 				{
-					result = spec->print(args);
-					if (result < 0)
-						goto error;
-					printed_chars += result;
+					printed_chars += spec->print(args);
 					break;
 				}
 			}
@@ -44,16 +41,10 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			result = write(1, format, 1);
-			if (result < 0)
-				goto error;
-			printed_chars += result;
+			printed_chars += write(1, format, 1);
 		}
 		format++;
 	}
 	va_end(args);
 	return (printed_chars);
-	error:
-		va_end(args);
-		return (-1);
 }
