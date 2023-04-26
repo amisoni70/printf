@@ -15,6 +15,10 @@ FormatSpecifier *get_specifiers(void)
 		{'i', print_integer},
 		{'b', print_binary},
 		{'S', print_custom_string},
+		{'u', print_unsigned_integer},
+		{'o', print_unsigned_octal},
+		{'x', print_unsigned_hexadecimal},
+		{'X', print_unsigned_hexadecimal_uppercase},
 		{'\0', NULL}
 	};
 
