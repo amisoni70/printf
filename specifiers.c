@@ -11,6 +11,8 @@ FormatSpecifier *get_specifiers(void)
 		{'c', print_character},
 		{'s', print_string},
 		{'%', print_percentage},
+		{'b', print_unsigned_integer},
+		{'r', print_revstr},
 		{'\0', NULL}
 	};
 

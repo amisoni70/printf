@@ -22,13 +22,10 @@ int print_unsigned_integer(va_list args)
 	while (temp > 0)
 	{
 		temp = temp / 2;
-		n++;
+		s++;
 	}
 
-
-	/*Maximum size of an int on a 64 bit machine is 20*/
-
-	buffer = (int *)malloc(sizeof(int) * n);
+	buffer = (int *)malloc(sizeof(int) * s);
 
 	if (!buffer)
 		return (-1);

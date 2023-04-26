@@ -11,6 +11,8 @@ int _printf(const char *format, ...);
 int print_character(va_list ap);
 int print_percentage(__attribute__((unused))va_list ap);
 int print_string(va_list ap);
+int print_unsigned_integer(va_list args);
+int print_revstr(va_list ap);
 
 /**
   *struct specifier - structure to handle specifier
