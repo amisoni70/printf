@@ -14,6 +14,7 @@ FormatSpecifier *get_specifiers(void)
 		{'d', print_integer},
 		{'i', print_integer},
 		{'b', print_binary},
+		{'S', print_custom_string},
 		{'\0', NULL}
 	};
 
