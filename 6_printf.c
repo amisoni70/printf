@@ -15,9 +15,16 @@ int print_pointer(va_list args)
 	unsigned long n;
 
 	/* Maximum size for a 64-bit pointer is 16 */
-	buffer = malloc(sizeof(char) * 17);
+	buffer = malloc(sizeof(char) * 16);
 	if (!buffer)
 		return (-1);
+
+	if (!ptr)
+	{
+		printed_chars += write(1, "(nil)", 5);
+		free(buffer);
+		return (printed_chars);
+	}
 
 	/* Convert pointer to hexadecimal */
 	n = (unsigned long) ptr;
