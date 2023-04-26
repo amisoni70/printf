@@ -5,7 +5,7 @@
   *	Non printable characters (0 < ASCII value < 32 or >= 127
   *	are printed this way: \x, followed by the ASCII code value
   *	in hexadecimal (upper case - always 2 characters)
-  *args: format parameter
+  *@args: format parameter
   *Return: number of chars printed
   */
 

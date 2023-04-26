@@ -19,6 +19,7 @@ FormatSpecifier *get_specifiers(void)
 		{'o', print_unsigned_octal},
 		{'x', print_unsigned_hexadecimal},
 		{'X', print_unsigned_hexadecimal_uppercase},
+		{'p', print_pointer},
 		{'\0', NULL}
 	};
 

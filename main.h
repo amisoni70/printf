@@ -22,6 +22,7 @@ int print_unsigned_integer(va_list args);
 int print_unsigned_octal(va_list args);
 int print_unsigned_hexadecimal(va_list args);
 int print_unsigned_hexadecimal_uppercase(va_list args);
+int print_pointer(va_list args);
 /**
   *struct specifier - structure to handle specifier
   *@specifier: specifier
