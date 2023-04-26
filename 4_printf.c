@@ -24,10 +24,11 @@ void write_with_buffer(int fd, const char *msg)
 
 		for (; n < c; n++)
 			buffer[n] = msg[p + n];
+
 		while (c > 0)
 		{
 			bytes_written = write(fd, buffer, c);
-			if (bytes_written <= 0)
+			if (bytes_written < 0)
 				return;
 			c -= bytes_written;
 			p += bytes_written;
